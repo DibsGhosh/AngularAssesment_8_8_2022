@@ -1,1 +1,19 @@
-<p>employeeList</p>
+<div class="container">
+    <h1 class="text-center">Table of Employees</h1>
+<table border="1" class="table table-striped">
+    <thead>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Date-of-Birth</th>
+        <th>Address</th>
+    </thead>
+        <tr *ngFor="let emp of EmployeeList">
+            <td>{{emp.firstName+ " " + emp.middleName + " " + emp.lastName}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.Dob | date: 'dd/MM/yyyy'}}</td>
+            <td>{{emp.Address1 + "\r" + emp.Address2}}</td>
+        </tr>
+</table>
+</div>
