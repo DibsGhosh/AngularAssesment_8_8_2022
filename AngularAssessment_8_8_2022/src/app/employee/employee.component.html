@@ -1,0 +1,56 @@
+<div class="container">
+    <form #employeeInfo = "ngForm" (ngSubmit)="saveInfo(employeeInfo)" class="row">
+    <h1 class="col-md-12 text-center">Enter Employee Details</h1>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" required placeholder="Enter your first name" name="firstname" #firstname = "ngModel" [(ngModel)] = "userInfo.firstName" >
+        <mat-error *ngIf="firstname.invalid">First Name is <strong>required</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Middle Name</mat-label>
+        <input matInput type="text" placeholder="Enter your middle name" name="middlename" #middlename = "ngModel" [(ngModel)] = "userInfo.middleName" >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" required placeholder="Enter your last name" name="lastname" #lastname = "ngModel" [(ngModel)] = "userInfo.lastName" >
+        <mat-error *ngIf="lastname.invalid">Last Name is <strong>required</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-6">
+        <mat-label>Age</mat-label>
+        <input matInput type="text" required placeholder="Enter your Age" name="age" #age = "ngModel" [(ngModel)] = "userInfo.age" >
+        <mat-error *ngIf="checkAge() == true"> Age must be a number between 1 to 100</mat-error>
+        <mat-error *ngIf="age.invalid">Age is <strong>required</strong></mat-error>
+        
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-6">
+        <mat-label>Gender</mat-label>
+        <mat-select matNativeControl required>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-12">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput type="date" required  name="dob" #dob = "ngModel" [(ngModel)] = "userInfo.Dob" >
+        <mat-error *ngIf="dob.invalid">Date of Birth cannot be <strong>Empty</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Address 1</mat-label>
+        <input matInput type="text" required placeholder="Enter your Address" name="address1" #address1 = "ngModel" [(ngModel)] = "userInfo.Address1" >
+        <mat-error *ngIf="address1.invalid">Address 1 is <strong>required</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Address 2</mat-label>
+        <input matInput type="text" placeholder="Enter your Address 2" name="address2" #address2 = "ngModel" [(ngModel)] = "userInfo.Address2" >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Pincode</mat-label>
+        <input matInput type="text" required placeholder="Enter your Pincode" name="pincode" #pincode = "ngModel" [(ngModel)] = "userInfo.pin" >
+        <mat-error *ngIf="pincode.invalid">Pincode is <strong>required</strong></mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" class="col-md-1 btn" style="margin-left: 0.75rem;">Submit</button>
+
+</form>
+</div>
+
